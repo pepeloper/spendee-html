@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay per person & Tip - Calculator</title>
+  <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss/dist/base.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss/dist/components.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss/dist/utilities.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="min-h-screen w-full bg-white pattern-dots-md text-gray-200 flex items-center justify-center" style="background: url(assets/images/background.jpeg)">
+    <div class="w-full md:max-w-xl border border-gray-200 bg-white py-6 px-8 text-gray-800 rounded-md shadow-md">
+      <!-- card header -->
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl text-gray-800">💸 Spendee
+
+        </h1>
+        <span class="text-gray-500 border-b border-gray-500 text-sm leading-snug">reset</span>
+      </div>
+      <!-- card header -->
+
+      <!-- total amount & people -->
+      <div class="mt-5 w-full flex justify-between border-b border-dotted pb-6 border-gray-400">
+        <!-- total amount -->
+        <div class="w-1/2 pr-8">
+          <label for="amount" class="block text-sm font-medium text-gray-700">Amount to pay</label>
+          <div class="mt-1 relative rounded-md shadow-sm">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <span class="text-gray-500 sm:text-sm">
+                $
+              </span>
+            </div>
+            <input id="amount" class="form-input w-full pl-8 pr-12 sm:text-sm" placeholder="0.00"
+              aria-describedby="price-currency" />
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+              <span class="text-gray-500 sm:text-sm" id="price-currency">
+                EUR
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- total amount -->
+
+        <!-- people -->
+        <div class="w-1/2 pl-8">
+          <label for="people" class="block text-sm font-medium text-gray-700">People</label>
+          <div class="mt-1 flex rounded-md shadow-sm">
+            <button
+              class="-mr-px relative px-4 py-2 border border-gray-300 rounded-l-md text-gray-700 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 z-10">
+              <svg fill="none" class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6" />
+              </svg>
+            </button>
+            <div class="relative flex-grow focus-within:z-20">
+              <input id="people"
+                class="text-center form-input w-full rounded-none text-sm"
+                placeholder="1" />
+            </div>
+            <button
+              class="-ml-px relative px-4 py-2 border border-gray-300 rounded-r-md text-gray-700 focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+              <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- people -->
+      </div>
+      <!-- total amount & people -->
+
+      <!-- tip block-->
+      <div class="mt-5 flex items-center justify-between">
+        <!-- tip -->
+        <div class="w-1/2 pr-8">
+          <div class="flex items-center">
+            <label class="inline-block text-sm font-medium text-gray-700" for="tip">Do you want to tip?</label>
+            <input type="checkbox" id="tip" name="tip" class="form-checkbox ml-2 h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+          </div>
+        </div>
+        <!-- tip -->
+
+        <!-- tip percentage -->
+        <div class="w-1/2 pl-8">
+          <span class="w-full relative z-0 inline-flex shadow-sm">
+            <button type="button"
+              class="relative flex items-center justify-center inline-flex items-center w-1/4 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              5%
+            </button>
+            <button type="button"
+              class="-ml-px relative flex items-center justify-center inline-flex items-center w-1/4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              10%
+            </button>
+            <button type="button"
+              class="-ml-px relative flex items-center justify-center inline-flex items-center w-1/4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              15%
+            </button>
+            <button type="button"
+              class="-ml-px relative flex items-center justify-center inline-flex items-center w-1/4 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              20%
+            </button>
+          </span>
+        </div>
+        <!-- tip percentage -->
+      </div>
+      <!-- tip block-->
+
+      <!-- footer -->
+      <div class="mt-6 flex justify-end">
+        <span class="inline-flex rounded-md shadow-sm">
+          <button type="button"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+            Calculate
+          </button>
+        </span>
+      </div>
+      <!-- footer -->
+    </div>
+  </div>
+</body>
+</html>
